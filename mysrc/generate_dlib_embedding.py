@@ -7,9 +7,6 @@ from tqdm import *
 import imgaug as ia
 from imgaug import augmenters as iaa
 
-os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID" 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
-
 if len(sys.argv) != 3:
     print(
         "Call this program like this:\n"
