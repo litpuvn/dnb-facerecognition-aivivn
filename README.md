@@ -107,7 +107,7 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
 - cd vào mỗi model và chaỵ 2 lệnh
     - $ python3 prepare.py
     - $ python3 train.py
-- Sau khi train xong 15 models, sẽ tạo ra 15 file ptest.npy và checkpoints trong thư mục weights, sau đó chạy:
+- Mỗi model mình sẽ chạy 4 lần với các random state khác nhau khi split trainset and validset, sau khi train xong 15 models, sẽ tạo ra 15 file ptest.npy và checkpoints trong thư mục weights, sau đó chạy:
     - $ python3 generate_pseudo.py
 - Output: file datasets/pseudo_test.csv chứa label và prob tương ứng mỗi ảnh
 - Hoặc có thể chạy script sẵn trong thư mục mysrc:
@@ -146,7 +146,7 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
     - Output: file mysrc/submission_final.csv
     - Bạn có thể lặp lại bước 7 nếu muốn, có thể acc sẽ tăng nhưng nguy cơ overfit cũng tăng, đến đây mình dừng lại.
 
-- Mình có thống kê top1 accuracy trên bộ valid cho 15 model sau qua các bước 4,6,7 để các bạn có 1 cái nhìn tổng quan:
+- Mình có thống kê top1 accuracy trên bộ valid cho 15 model sau qua các bước 4,6,7 để các bạn có 1 cái nhìn tổng quan (xem file training_log*.txt trong mỗi model)
 
     Model                     | Pretrained weights       | Valid acc step4 (1000 classes) | Valid acc step 6 (1001 classes) | Valid acc step7 (1001 classes)
     -------------------------:| :-----------------------:|:------------------------------ |:-------------------------------:|:------------------------------:
