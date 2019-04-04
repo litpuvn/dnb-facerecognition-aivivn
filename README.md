@@ -102,14 +102,9 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
 - Key: rất nhiều ảnh của dataset là ảnh grayscale, và bị răng cưa (ảnh độ phân giải thấp resize lên phân giải cao), những ảnh này có thể xếp vào trường hợp khó nhận dạng. Lúc đầu mình sử dụng 2 thư viện [colorization] https://github.com/richzhang/colorization để tạo màu cho ảnh và [Super Resolution GANs] https://github.com/tensorlayer/srgan để resize về resolution[224x224] để làm đầu vào cho vgg face2, giúp mình boost accuracy lên khoảng 0.004. Nhưng sau đó mình chọn cách dùng augmentation trong lúc train, nhiều phép blur, tograyscale, contrast, addToHueAndSaturation ... nên không cần sử dụng thêm 2 thư viện này. Top1 accuracy có thể improve khoảng 0.007.
 
 ### Step4: Train on trainset(4720 images)
-<<<<<<< HEAD
 - Note: model mình build chỉ khoảng 2M parameters nên chỉ cần GPU khoảng 3GB là đủ train, vì mình load tất cả ảnh vào RAM để train cho nhanh nên để chạy code thành công yêu cầu RAM > 24GB, nếu ko đủ RAM các bạn có thể sửa lại hàm train_generator để train với batchsize nhỏ hơn nhưng lâu hơn 1 chút. Mình có sử dụng augmentation và cyclical learning rates cho train và flip augmetation cho test.
 - Có 15 models (thực chất chỉ dùng 14 models, dlib yếu quá nên mình ko dùng vì sợ nhiễu), mỗi model sẽ tương ứng với một pretrain weights xem ở cuối bài
 - cd vào mỗi model và chaỵ 2 lệnh
-=======
-- Note: model mình build chỉ khoảng 2M parameters nên chỉ cần GPU khoảng 3GB là đủ train, vì mình load tất cả ảnh vào RAM để train cho nhanh nên để chạy code thành công yêu cầu RAM > 24GB, nếu ko đủ RAM các bạn có thể sửa lại hàm train_generator để load từng embedding theo batchsize thay vì load hết vào RAM nhưng train lâu hơn 1 chút. Mình có sử dụng augmentation và cyclical learning rates cho train và flip augmetation cho test.
-- Có 15 models (thực chất chỉ dùng 14 models, dlib yếu quá nên mình ko dùng vì sợ nhiễu), cd vào mỗi model và chaỵ 2 lệnh
->>>>>>> 1a3eb6c8039cbfdc9aea5c3bde6ae78f99daff3c
     - $ python3 prepare.py
     - $ python3 train.py
 - Sau khi train xong 15 models, sẽ tạo ra 15 file ptest.npy và checkpoints trong thư mục weights, sau đó chạy:
@@ -160,8 +155,8 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
     model3_insightface        | model-r50-am-lfw         | 0.855244                       | 0.929502                        | 0.933686
     model4_insightface        | model-y1-test2           | 0.787871                       | 0.905667                        | 0.912235
     model5_dlib               | dlib_resnet_model_v1.dat | 0.341261                       |                                 | 0.619703
-    model6_facenet            | 20180402-114759          | 0.670604                       | 0.857786                        | 0.862553
-    model7_facenet            | 20180408-102900          | 0.682468                       | 0.872087                        | 0.879078
+    model6_facenet            | 20180402_114759          | 0.670604                       | 0.857786                        | 0.862553
+    model7_facenet            | 20180408_102900          | 0.682468                       | 0.872087                        | 0.879078
     vggface2_resnet50_128     | resnet50_128_pytorch     | 0.752331                       | 0.893167                        | 0.898305
     vggface2_resnet50_256     | resnet50_256_pytorch     | 0.756780                       | 0.902648                        | 0.905720
     vggface2_resnet50_ft      | resnet50_ft_pytorch      | 0.779237                       | 0.910328                        | 0.916525
