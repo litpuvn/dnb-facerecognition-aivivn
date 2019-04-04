@@ -1,0 +1,1 @@
+python3 generate_dlib_embedding.py ../models/dlib-19.17/models/shape_predictor_5_face_landmarks.dat ../models/dlib-19.17/models/dlib_face_recognition_resnet_model_v1.dat
