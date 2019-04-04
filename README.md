@@ -98,6 +98,7 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
     - $ bash generate_facenet_embedding.sh
     - $ bash generate_dlib_embedding.sh
     - $ bash generate_vggface2_embedding.sh
+- Chú ý vggface2 phải cài caffe và chạy trên python2.7
 - Output: thư mục embedding trong các model[models/dlib-19.17/embedding models/insightface/embedding models/vgg_face2/embedding models/facenet/embedding] chứa các vector embedding tương ứng các ảnh của dataset.
 - Key: rất nhiều ảnh của dataset là ảnh grayscale, và bị răng cưa (ảnh độ phân giải thấp resize lên phân giải cao), những ảnh này có thể xếp vào trường hợp khó nhận dạng. Lúc đầu mình sử dụng 2 thư viện [colorization] https://github.com/richzhang/colorization để tạo màu cho ảnh và [Super Resolution GANs] https://github.com/tensorlayer/srgan để resize về resolution[224x224] để làm đầu vào cho vgg face2, giúp mình boost accuracy lên khoảng 0.004. Nhưng sau đó mình chọn cách dùng augmentation trong lúc train, nhiều phép blur, tograyscale, contrast, addToHueAndSaturation ... nên không cần sử dụng thêm 2 thư viện này. Top1 accuracy có thể improve khoảng 0.007.
 
