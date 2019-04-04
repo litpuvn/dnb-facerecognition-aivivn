@@ -22,7 +22,7 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
 - Trainset: 4720 images của 1000 người, không có nhãn unknown, mất cân bằng giữa các nhãn (có nhãn chỉ có 1 ảnh trong tập train, có nhãn có 16 ảnh)
 - Testset: 17091 images, có nhãn unknown.
 - Một số ảnh trong tập train bị gán nhãn sai, có thể dễ dàng xác định thông qua tính euclidean distance giữa các embedding của cùng nhãn, mình không tiến hành gán nhãn lại bộ train vì xem vấn đề nhiễu trong trainset là bình thường và không nhiều nên có thể bỏ qua
-- Rất nhiều ảnh trainset và testset chỉ nhìn thất mặt ở một phía, một số ảnh mặt có đầu chúc xuống 180 độ, nhiều ảnh còn thậm chí không có face, nhiều ảnh chỉ là tranh vẽ (vì mấy vị tướng thời xưa không có ảnh chụp), xen lẫn ảnh grayscale và ảnh color ...
+- Rất nhiều ảnh trainset và testset chỉ nhìn thấy mặt ở một phía, một số ảnh mặt có đầu chúc xuống 180 độ, nhiều ảnh còn thậm chí không có face, nhiều ảnh chỉ là tranh vẽ (vì mấy vị tướng thời xưa không có ảnh chụp), xen lẫn ảnh grayscale và ảnh color ...
 - Bài toán face recognition xuất hiện nhiều, có rất nhiều giải pháp có sẵn có thể đạt accuracy trên 99.8% trên bộ valid LFW, nhưng hầu hết các model này train trên những bộ dataset rất lớn như VGG2 (9K ids/3.31M images), MS1M-ArcFace (85K ids/5.8M images) ... nên nếu build model theo các hướng tiếp cận này trên bộ 4720 images khó có thể đạt accuracy cao tương ứng, và các bộ dataset này không phải giải quyết bài toán unknown, và mình đánh giá bộ LFW không quá khó.
 - Mình hướng tiếp cận dùng embedding của các model đã train trên các bộ dataset lớn, vì model đã học được đặc trưng của khuôn mặt nên có thể áp dụng cho người Việt Nam.
 ### Step1: Face detection and alignment
