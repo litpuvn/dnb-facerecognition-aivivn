@@ -150,7 +150,7 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
 - Mình có thống kê top1 accuracy trên bộ valid cho 15 model sau qua các bước 4,6,7 để các bạn có 1 cái nhìn tổng quan (xem file training_log*.txt trong mỗi model)
 
     Model                     | Pretrained weights       | Valid acc step4 (1000 classes) | Valid acc step 6 (1001 classes) | Valid acc step7 (1001 classes)
-    -------------------------:| :-----------------------:|:------------------------------ |:-------------------------------:|:------------------------------:
+    :------------------------:| :-----------------------:|:------------------------------:|:-------------------------------:|:------------------------------:
     model1_insightface        | model-r100-ii            | 0.887447                       | 0.940572                        | 0.945180
     model2_insightface        | model-r34-amf            | 0.847458                       | 0.925953                        | 0.930456
     model3_insightface        | model-r50-am-lfw         | 0.855244                       | 0.929502                        | 0.933686
@@ -169,5 +169,6 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
 
 - File submission cuối cùng là tổng hợp của 14 model theo tỷ lệ thích hợp, model có valid accuracy cao sẽ đánh trọng số cao [xem ở line 45 file pseudo_generate_submission_step7.py]
 - Chú ý link weights mình chỉ lưu trữ trong vòng 1-2 tuần, bạn nào muốn sử dụng như một pretrain thì tải về vì sau đó mình sẽ xóa để tiết kiệm dung lượng cloud.
+- Mọi thắc mắc vui lòng liên hệ email: dungnb1333@gmail.com
 
 Nếu bạn thấy hữu ích thì connect linkedin và endorse một số skill của mình ^^ https://www.linkedin.com/in/dung-nguyen-ba-137027159/ .
