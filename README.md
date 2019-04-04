@@ -130,7 +130,7 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
         - $ cd models/embedding_distance
         - $ bash insightface_embedding_distance.sh
     - Mình chỉ dùng embedding của insightface để xác định unknown, có thể kết hợp các model khác của facenet, vggface2, dlib nếu ai thích, mình có viết sẵn script trong thư mục này.
-    - Mình tạo 1 file submission predict tất cả là nhãn 1000, score là 0.01 có nghĩa xấp xỉ 17000*0.01=170 tấm unknown trong tập public test, nếu private và public ko shakeup và cùng distribution thì xấp xỉ 340 unknown images trong toàn bộ tập test.
+    - Mình tạo 1 file submission predict tất cả là nhãn 1000, score là 0.01 có nghĩa xấp xỉ 17000*0.01=170 tấm unknown trong tập test, nếu private và public ko shakeup và cùng distribution.
     - Mình quy ước những ảnh trong tập test có euclidean distance minimum > 1.35 và prob predicted < 0.1 là unknown, có thể giảm ngưõng distance tăng ngưỡng prob nếu muốn nhưng mình muốn lấy unknown chính xác nhất có thể để đưa vào bộ train nên chọn 2 ngưỡng này. Kết hợp ảnh ko detect được face ở step1 để tạo unknown class. Mình sẽ có tầm 116 tấm làm ground truth cho unknown, đưa vào train thôi.
     - Chạy lệnh:
     - $ python3 get_unknown.py
