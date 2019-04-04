@@ -168,5 +168,6 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
     vggface2_senet50_scratch  | senet50_scratch_pytorch  | 0.747087                       | 0.901059                        | 0.906992
 
 - File submission cuối cùng là tổng hợp của 14 model theo tỷ lệ thích hợp, model có valid accuracy cao sẽ đánh trọng số cao [xem ở line 45 file pseudo_generate_submission_step7.py]
+- Chú ý link weights mình chỉ lưu trữ trong vòng 1-2 tuần, bạn nào muốn sử dụng như một pretrain thì tải về vì sau đó mình sẽ xóa để tiết kiệm dung lượng cloud.
 
 Nếu bạn thấy hữu ích thì connect linkedin và endorse một số skill của mình ^^ https://www.linkedin.com/in/dung-nguyen-ba-137027159/ .
