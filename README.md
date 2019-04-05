@@ -179,3 +179,5 @@ Vì mình biết rất nhiều công ty và nhiều bạn đang làm hoặc nghi
     https://drive.google.com/drive/folders/1JmsBh8jMxGlVsdogHFglODvOueNJ7EFy?usp=sharing
 - Nếu bạn không muốn train lại chỉ cần load weights và predict tập test là được. Mình chia trainset thành 5 folds, train trên 4 folds và valid trên 1 fold, chạy 4 lần với các random state khác nhau, trong đó mỗi thư mục weights có weights đã train trên bộ trainset (4720 images) và weights train trên trainset (4720 images) + pseudo testset (~15000 images). Training log có ghi sẵn trong file .txt trong mỗi model, mọi người có thể sử dụng 1 file weight bất kì trong 40 file weight này.
 - Chú ý link weights mình chỉ lưu trữ trong vòng 1-2 tuần, bạn nào muốn sử dụng như một pretrain thì tải về vì sau đó mình sẽ xóa để tiết kiệm dung lượng cloud. Nếu bạn nào có ý tốt có thể tải về và chia sẻ lạị cho mọi người sử dụng hộ mình càng tốt, hoặc không có thể train lại với các script mình ghi ở trên, mất tầm 1-2 ngày cho 15 model, độ chính xác ko thay đổi.
+
+- Nếu cần thông tin bổ sung có thể liên hệ linkedin của mình trao đổi https://www.linkedin.com/in/dung-nguyen-ba-137027159/
